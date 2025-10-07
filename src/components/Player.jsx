@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 
-export default function Player() {
+const Player = () => {
   const [enteredPlayerName, setEnteredPlayerName] = useState(null);
   const playerName = useRef();
 
@@ -22,4 +22,6 @@ export default function Player() {
       </p>
     </section>
   );
-}
+};
+
+export default Player;
