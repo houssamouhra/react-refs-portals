@@ -1,4 +1,5 @@
 import { useImperativeHandle, useRef } from "react";
+import { createPortal } from "react-dom";
 
 const ResultModal = ({ targetTime, remainingTime, onReset, ref }) => {
   const dialog = useRef();
@@ -12,7 +13,7 @@ const ResultModal = ({ targetTime, remainingTime, onReset, ref }) => {
   }));
 
   // prettier-ignore
-  return (
+  return createPortal(
     <dialog onClose={onReset} ref={dialog} className='result-modal'>
       {userLost && <h2>You lost</h2>}
       {!userLost && <h2>Your Score: {score}</h2>}
@@ -25,7 +26,8 @@ const ResultModal = ({ targetTime, remainingTime, onReset, ref }) => {
       <form method='dialog' onSubmit={onReset}>
         <button>Close</button>
       </form>
-    </dialog>
+    </dialog>,
+    document.getElementById('modal')
   );
 };
 

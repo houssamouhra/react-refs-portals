@@ -11,10 +11,12 @@ const Player = () => {
 
   return (
     <section id='player'>
-      <h1>
-        The <em>almost</em> final countdown
-      </h1>
-      <p>Stop the timer once you estimate that time is (almost) up</p>
+      <header>
+        <h1>
+          The <em>almost</em> final countdown
+        </h1>
+        <p>Stop the timer once you estimate that time is (almost) up</p>
+      </header>
       <h2>Welcome {enteredPlayerName ?? "unknown entity"}</h2>
       <p>
         <input type='text' ref={playerName} />
